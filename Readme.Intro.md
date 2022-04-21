@@ -4,7 +4,8 @@
 
 `.includes(valor)` -> devuelve true si el valor esta en el array
 
-`.indexOf(valor)` -> devuelve el indice del valor
+`.indexOf(valor)` -> devuelve el indice del valor.
+
 `.push() .pop()`
 `.unshift() .shift()`
 
