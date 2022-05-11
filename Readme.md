@@ -1,6 +1,7 @@
 ## Indice de contenidos
 
 ### [Intro a javascript](./Readme.Intro.md)
+### [Metodos de Arrays](./README.arrays.md)
 
 # Como arrancar los ejercicios de ironhack
 
