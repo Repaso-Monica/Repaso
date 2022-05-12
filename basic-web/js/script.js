@@ -1,19 +1,28 @@
-const quoteForm = document.querySelector(".quote-form");
-console.log(quoteForm);
-quoteForm.onsubmit = (e) => {
-  e.preventDefault();
-  console.log("Submitted");
-  const quote = document.querySelector("#quote-text").value;
-  const author = document.querySelector("#quote-author").value;
-  const city = document.querySelector("#quote-author-city").value;
+//SELECTORES DOM
+const quoteInput = document.querySelector("#quote");
+const authorInput = document.querySelector("#author");
+const cityInput = document.querySelector("#city");
 
-  const cardString = `
-  <div class="col-md-4">
-  <div class="card">
+const quoteForm = document.querySelector(".quote-form");
+
+//EVENTOS
+//Al dispararse el submit se imprima una nueva card con los valores del form
+quoteForm.onsubmit = (event) => {
+  //Evita el comportamiento por defecto del formulario,
+  //en este caso no se recarga la página ni envia informacion al servidor
+  event.preventDefault();
+
+  const quote = quoteInput.value;
+  const author = authorInput.value;
+  const city = cityInput.value;
+
+  const newCard = `
+  <div class="col-12 col-md-6 col-lg-4">
+  <div class="card quote-card">
     <div class="card-header">Quote</div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>${quote}.</p>
+        <p>${quote}</p>
         <footer class="blockquote-footer">
           ${author} famous in
           <cite title="Source Title">${city}</cite>
@@ -21,10 +30,18 @@ quoteForm.onsubmit = (e) => {
       </blockquote>
     </div>
   </div>
-</div>
-`;
+  </div>
+  `;
 
-  const quoteContainer = document.querySelector(".quote-container");
-
-  quoteContainer.innerHTML += cardString;
+  const quoteContainer = document.querySelector("#quote-row");
+  quoteContainer.innerHTML += newCard;
 };
+
+//CUIDADO, ARRAYS! Enganchar eventos a listas es mas dificil
+const cardArray = document.querySelectorAll(".card");
+
+cardArray.forEach((card) => {
+  card.onclick = (event) => {
+    console.log(event, "Evento de Raton");
+  };
+});

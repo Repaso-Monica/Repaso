@@ -1,11 +1,10 @@
-main {
-  padding-top: 16px;
+section {
+  margin-top: 16px;
 }
 
-.form-section {
-  margin-bottom: 24px;
+.quote-section {
 }
 
-.quote-form .input-group {
-  padding-bottom: 8px;
+.quote-card {
+  margin-bottom: 16px;
 }
